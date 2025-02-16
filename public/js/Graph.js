@@ -54,4 +54,39 @@ class Graph {
 
         return newNode;
     }
+
+    // Adds an edge between two nodes.
+    // Input:
+    //      The name of the 2 endpoint nodes
+    // Output:
+    //      The newly created edge.
+    // Exceptions:
+    //      If either of the given names do not correspond to a node in the graph,
+    //          then null is returned instead.
+    addEdge(end1Name, end2Name) {
+        const newName = this.#findNextName(this.edges);
+        let endNode1 = null;
+        let endNode2 = null;
+
+        for (let i = 0; i < this.nodes.length; i++) {
+            if (this.nodes[i].name == end1Name) {
+                endNode1 = this.nodes[i];
+            }
+            else if (this.nodes[i].name == end2Name) {
+                endNode2 = this.nodes[i];
+            }
+        }
+
+        let newEdge = null;
+
+        if (endNode1 !== null || endNode2 !== null) {
+            newEdge = new Edge(newName, endNode1, endNode2);
+            endNode1.edges.push(newEdge);
+            endNode2.edges.push(newEdge);
+
+            this.edges.push(newEdge);
+        }
+
+        return newEdge;
+    }
 }
