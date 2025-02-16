@@ -1,8 +1,6 @@
-import { Edge } from "./Edge";
-
 const nodeSize = 50; // px
 
-export class Node {
+class Node {
     constructor(name) {
         this.name = name;
         this.size = nodeSize;

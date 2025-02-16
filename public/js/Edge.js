@@ -1,6 +1,4 @@
-import { Node } from "./Node";
-
-export class Edge {
+class Edge {
     constructor(name, end1, end2) {
         this.name = name;
         this.endpoints = [end1, end2];
