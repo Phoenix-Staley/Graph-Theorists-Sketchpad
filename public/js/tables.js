@@ -19,6 +19,7 @@ function findIncedentTable(g) {
 function findIncedentTablesMultiplied(incidentTable, rotatedIncidentTable) {
     let result = Array.from({ length: g.nodes.length }, () => Array(g.nodes.length).fill(0));
 
+    // i and j will always be small, so this will not have bad performance
     for (let i = 0; i < g.nodes.length; i++) {
         for (let j = 0; j < g.edges.length; j++) {
             for (let k = 0; k < g.edges.length; k++) {
