@@ -1,5 +1,5 @@
-const defaultWidth = 250; // px
-const defaultHeight = 250; // px
+const defaultWidth = 750; // px
+const defaultHeight = 750; // px
 const maxNodes = 64;
 
 class Graph {
